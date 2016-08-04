@@ -1,3 +1,4 @@
+// Block 1: Unabstracted, Repeats code
 var apples = {name: "Apple", price: 2.00, count: 0};
 var oranges = {name: "Orange", price: 2.00, count: 0};
 var pears = {name: "Pear", price: 2.00, count: 0};
@@ -9,7 +10,7 @@ processFruit();
 nextStepOfProcessing();
 
 function processFruit() {
-  // Relies on a global variable
+  // Relies on a global array variable
   // function does more than one thing. 1) loops thru the fruit array 2) applies some logic to each one
   fruits.forEach(function(theFruit, index) {
     // all logic for a single fruit object here
@@ -27,6 +28,7 @@ function nextStepOfProcessing() {
 /*  Abstracted for reuse
 /************************************************************************************/
 
+// Block 2: Abstracted functionality, DRY (Don't Repeat Yourself)
 var apples = {name: "Apple", price: 2.00, count: 0};
 var oranges = {name: "Orange", price: 2.00, count: 0};
 var pears = {name: "Pear", price: 2.00, count: 0};
@@ -34,6 +36,7 @@ var bananas = {name: "Banana", price: 2.00, count: 0};
 
 var fruit = [apples, oranges, pears, bananas];
 
+// moves the loop of processing into a function, so we can run this by itself if needed.
 processAllFruit();
 
 // still relies on the global array of fruit
@@ -51,12 +54,12 @@ function processAllFruit() {
 // takes one fruit in, returns the changed fruit object
 function processSingleFruit(aFruit) {
   // logic for a single fruit object here
-
+  //
   return processedFruit;
 }
 
 function nextStepOfProcessing(aFruit) {
   // some other thing done to a single fruit object
-
+  //
   return processedFruit;
 }
