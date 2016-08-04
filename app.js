@@ -25,8 +25,6 @@ function nextStepOfProcessing() {
 }
 
 /************************************************************************************/
-/*  Abstracted for reuse
-/************************************************************************************/
 
 // Block 2: Abstracted functionality, DRY (Don't Repeat Yourself)
 var apples = {name: "Apple", price: 2.00, count: 0};
@@ -37,15 +35,16 @@ var bananas = {name: "Banana", price: 2.00, count: 0};
 var fruit = [apples, oranges, pears, bananas];
 
 // moves the loop of processing into a function, so we can run this by itself if needed.
-processAllFruit();
+processAllFruit(fruit);
+processAllFruit(otherFruitArray);
 
-// still relies on the global array of fruit
+// We could have multiple arrays of various fruit collections and each could be processed separately at differnt times
 // can be called repeatedly at different times as needed
-function processAllFruit() {
-  fruit.forEach(function(theFruit, index) {
+function processAllFruit(fruitArray) {
+  fruitArray.forEach(function(theFruit, index) {
     // each step of processing could be called in turn, in any order that makes sense
-    fruit[index] = processFruit(theFruit);
-    fruit[index] = nextStepOfProcessing(fruit[index]);
+    fruitArray[index] = processFruit(theFruit);
+    fruitArray[index] = nextStepOfProcessing(fruitArray[index]);
     // and so on...
   });
 }
