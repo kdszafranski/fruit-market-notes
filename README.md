@@ -1,6 +1,6 @@
 # Fruit Market Notes
 
-This code illustrates the differences between non-abstracted and repeated code and proper DRY/abstracted approaches.
+This code illustrates the differences between non-abstracted,repeated code versus a proper DRY/abstracted approach.
 
 Each block intends to process an array of Fruit objects.
 
