@@ -1,3 +1,26 @@
+// separate variables for each thing
+// Tons of repeated code
+var appleName = "apple";
+var applePrice = 2;
+var orangeName = "orange";
+var orangePrice = 2;
+var pearName = "pear";
+var pearPrice = 2;
+var bananaName = "banana";
+var bananaPrice = 2;
+
+$("#applefruit").append("<p>" + applePrice + "</p>");
+$("#orangefruit").append("<p>" + orangePrice + "</p>");
+$("#pearfruit").append("<p>" + pearPrice + "</p>");
+$("#bananafruit").append("<p>" + bananaPrice + "</p>");
+
+processFruit(appleName, applePrice);
+processFruit(orange, orangePrice);
+processFruit(pearName, pearPrice);
+processFruit(bananaName, bananaPrice);
+
+/*************************************************************************/
+
 // Block 1: Unabstracted, Repeats code
 var apples = {name: "Apple", price: 2.00, count: 0};
 var oranges = {name: "Orange", price: 2.00, count: 0};
